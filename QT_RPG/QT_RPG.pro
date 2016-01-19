@@ -14,7 +14,6 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    Player.cpp \
     Game.cpp \
     Life.cpp \
     Skill.cpp \
@@ -24,7 +23,6 @@ SOURCES += main.cpp \
     Bag.cpp
 
 HEADERS  += \
-    Player.h \
     Game.h \
     Life.h \
     Skill.h \

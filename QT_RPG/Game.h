@@ -18,6 +18,8 @@ public:
 private:
     vector<pair<int,int> >monsterLocation;
     vector<Monster*>monsters;
+    void mousePressEvent(QMouseEvent * event) {hero->setFocus();}
+    void mouseReleaseEvent(QMouseEvent * event) {hero->setFocus();}
 };
 
 
