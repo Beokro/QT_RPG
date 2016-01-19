@@ -3,6 +3,7 @@
 #include <QKeyEvent>
 #include <QDebug>
 
+
 Hero::Hero(QGraphicsItem *parent): QGraphicsPixmapItem(parent)
 {
     setPixmap(QPixmap(":/images/Sabers.png"));
@@ -14,19 +15,19 @@ void Hero::keyPressEvent(QKeyEvent * event)
 {
     if(event->key() == Qt::Key_Left){
         if(pos().x()>0)
-            setPos(x()-80,y());
+            setPos(x()-moveDistance,y());
     }
     else if (event->key() == Qt::Key_Right){
         if(pos().x()<700)
-            setPos(x()+80,y());
+            setPos(x()+moveDistance,y());
     }
     else if(event->key() == Qt::Key_Up){
         if(pos().y()>0)
-            setPos(x(),y()-80);
+            setPos(x(),y()-moveDistance);
     }
     else if(event->key() == Qt::Key_Down){
         if(pos().y()<700)
-            setPos(x(),y()+80);
+            setPos(x(),y()+moveDistance);
     }
 }
 

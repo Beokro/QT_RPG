@@ -25,13 +25,18 @@ private:
     int level;
     int experience;
     int maxEXP;
+    int moveDistance = 50;
     Bag bag;
 public:
     Hero(QGraphicsItem * parent =0);
     void keyPressEvent(QKeyEvent * event);
+
     Hero(string name, int level, int attack, int defense, int stamina, int intelligence,
-            int stun, int weak, int HP, int MP,  vector<int> skills) :
-        Life(name, attack, defense, stamina, intelligence, stun, weak, HP, MP, skills) {this->level = level;  maxEXP = LevelToUpgrade[level];}
+            int stun, int weak, int HP, int MP,  vector<int> skills, QGraphicsItem * parent =0) : QGraphicsPixmapItem(parent),
+        Life(name, attack, defense, stamina, intelligence, stun, weak, HP, MP, skills) {this->level = level;  maxEXP = LevelToUpgrade[level];
+
+                                                                                        setPixmap(QPixmap(":/images/Sabers.png"));
+                                                                                        setScale(0.5);}
     Hero(string name);
     bool CheckLevelUp();
     bool CheckOwnership(Item& item);
@@ -58,10 +63,10 @@ public:
     // string GetBag() { return bag.ToString(); }
     void GainItem(Item i);
     void GainCoins(int i) { coins += i; }
-    void GainEXP(int i) { experience += i; UpdateLevel(); };
+    void GainEXP(int i) { experience += i; UpdateLevel(); }
 
     void UseSkill(int skillNum);
-    void SkillsToString(){};    /// #####################
+    void SkillsToString(){}   /// #####################
     //bool WearEquip(Equipment equ);
     //bool TakeOffEquip(Equipment equ);
 

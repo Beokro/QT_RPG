@@ -4,6 +4,7 @@
 #include <QGraphicsScene>
 #include <QtWidgets>
 #include "Hero.h"
+#include "Monster.h"
 #include <vector>
 using std::vector;
 using std::pair;
@@ -16,7 +17,7 @@ public:
     Hero * hero;
 private:
     vector<pair<int,int> >monsterLocation;
-    vector<Hero*>monsters;
+    vector<Monster*>monsters;
 };
 
 
