@@ -3,6 +3,11 @@
         <file>Saber.png</file>
         <file>background.png</file>
         <file>Sabers.png</file>
+        <file>Monster00.png</file>
         <file>Monster01.png</file>
+        <file>Monster02.png</file>
+        <file>Monster03.png</file>
+        <file>Monster04.png</file>
+        <file>Monster05.png</file>
     </qresource>
 </RCC>

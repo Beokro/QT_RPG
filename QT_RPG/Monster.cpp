@@ -11,12 +11,21 @@ public:
     vector<Item> DropOff();
 };*/
 
+Monster::Monster(QGraphicsItem * parent) : Life("Default", 0, 0, 0, 0, vector<int>()), gold(0), EXP(0), QGraphicsPixmapItem(parent)
+   {
+    QPixmap temp(":/images/Monster02.png");
+    temp.scaledToHeight(70,Qt::SmoothTransformation);
+    setPixmap(temp);
+}
+
+
 void Monster::ShowInformation(){
   cout<<"\nName: "<<specialType<<GetName()<<endl;
   cout<<"HP: "<<GetHP()<<endl;
   cout<<"ATT: "<<GetAtt()<<endl;
   cout<<"DEF: "<<GetDef()<<endl;
   cout<<"INT: "<<GetIntl()<<endl;
+
 }
 
 

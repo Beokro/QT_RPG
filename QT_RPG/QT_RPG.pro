@@ -20,7 +20,8 @@ SOURCES += main.cpp \
     Item.cpp \
     Hero.cpp \
     Monster.cpp \
-    Bag.cpp
+    Bag.cpp \
+    Dungeon.cpp
 
 HEADERS  += \
     Game.h \
@@ -29,7 +30,8 @@ HEADERS  += \
     Item.h \
     Hero.h \
     Monster.h \
-    Bag.h
+    Bag.h \
+    Dungeon.h
 
 FORMS    += mainwindow.ui
 

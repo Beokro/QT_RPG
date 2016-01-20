@@ -3,6 +3,8 @@
 #include <QKeyEvent>
 #include <QDebug>
 
+ int mapLenght = 510;
+ int mapHeight = 510;
 
 Hero::Hero(QGraphicsItem *parent): QGraphicsPixmapItem(parent)
 {
@@ -18,7 +20,7 @@ void Hero::keyPressEvent(QKeyEvent * event)
             setPos(x()-moveDistance,y());
     }
     else if (event->key() == Qt::Key_Right){
-        if(pos().x()<700)
+        if((pos().x()+100)<mapLenght)
             setPos(x()+moveDistance,y());
     }
     else if(event->key() == Qt::Key_Up){
@@ -26,7 +28,7 @@ void Hero::keyPressEvent(QKeyEvent * event)
             setPos(x(),y()-moveDistance);
     }
     else if(event->key() == Qt::Key_Down){
-        if(pos().y()<700)
+        if((pos().y()+100)<mapHeight)
             setPos(x(),y()+moveDistance);
     }
 }

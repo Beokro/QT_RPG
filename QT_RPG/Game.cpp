@@ -4,8 +4,8 @@
 #include <QBrush>
 #include <QDebug>
 
-static int mapLenght = 800;
-static int mapHeight = 450;
+static int mapLenght = 510;
+static int mapHeight = 510;
 
 
 Game::Game(QWidget *parent)
@@ -45,7 +45,7 @@ Game::Game(QWidget *parent)
 
      for(int i =0; i<size; i++){
         monsters.push_back(new Monster());
-        monsters[i]->setScale(0.4);
+        monsters[i]->setScale(0.25);
         monsters[i]->setPos(monsterLocation[i].first*50,
                             monsterLocation[i].second*50);
         scene->addItem(monsters[i]);

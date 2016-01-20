@@ -22,8 +22,7 @@ public:
     /*Life(string name, int attack, int defense, int stamina, int intelligence,
          int stun, int weak,int HP, int MP,vector<int> skills);
      Life(string name, int attack, int defense, int stamina, int intelligence, vector<int> skills);*/
- Monster(QGraphicsItem * parent =0) : Life("Default", 0, 0, 0, 0, vector<int>()), gold(0), EXP(0), QGraphicsPixmapItem(parent)
-    {setPixmap(QPixmap(":/images/Monster01.png"));setScale(0.1);}
+    Monster(QGraphicsItem * parent =0);
     Monster(string name, int attack, int defense, int stamina, int intelligence,
      vector<int>skills, vector<std::pair<Item, int> >dpitems, int g, int exp, QGraphicsItem * parent =0)
         : Life(name, attack, defense, stamina, intelligence,  skills), dropItems(dpitems), gold(g), EXP(exp), QGraphicsPixmapItem(parent)
