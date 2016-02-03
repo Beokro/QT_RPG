@@ -13,23 +13,63 @@ Hero::Hero(QGraphicsItem *parent): QGraphicsPixmapItem(parent)
 
 }
 
+Hero::Hero(const Hero& h,QGraphicsItem * parent): QGraphicsPixmapItem(parent){
+    name = h.name;
+    level = h.level;
+    attack =h.attack;
+    defense = h.defense;
+    stamina = h.stamina;
+    intelligence = h.intelligence;
+    stun = h.stun;
+    weak = h.weak;
+    HP = h.HP;
+    MP = h.MP;
+
+    setPixmap(QPixmap(":/images/Sabers.png"));
+    setScale(0.5);
+}
+
+Hero& Hero::operator =(const Hero & h){
+    name = h.name;
+    level = h.level;
+    attack =h.attack;
+    defense = h.defense;
+    stamina = h.stamina;
+    intelligence = h.intelligence;
+    stun = h.stun;
+    weak = h.weak;
+    HP = h.HP;
+    MP = h.MP;
+
+    setPixmap(QPixmap(":/images/Sabers.png"));
+    setScale(0.5);
+}
+
 void Hero::keyPressEvent(QKeyEvent * event)
 {
     if(event->key() == Qt::Key_Left){
-        if(pos().x()>0)
+        if(pos().x()>0){
             setPos(x()-moveDistance,y());
+            steps.push_back(1);
+        }
     }
     else if (event->key() == Qt::Key_Right){
-        if((pos().x()+100)<mapLenght)
+        if((pos().x()+100)<mapLenght){
             setPos(x()+moveDistance,y());
+            steps.push_back(3);
+        }
     }
     else if(event->key() == Qt::Key_Up){
-        if(pos().y()>0)
+        if(pos().y()>0){
             setPos(x(),y()-moveDistance);
+            steps.push_back(2);
+        }
     }
     else if(event->key() == Qt::Key_Down){
-        if((pos().y()+100)<mapHeight)
+        if((pos().y()+100)<mapHeight){
             setPos(x(),y()+moveDistance);
+            steps.push_back(4);
+        }
     }
 }
 

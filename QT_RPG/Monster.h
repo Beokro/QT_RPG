@@ -27,6 +27,8 @@ public:
      vector<int>skills, vector<std::pair<Item, int> >dpitems, int g, int exp, QGraphicsItem * parent =0)
         : Life(name, attack, defense, stamina, intelligence,  skills), dropItems(dpitems), gold(g), EXP(exp), QGraphicsPixmapItem(parent)
     {setPixmap(QPixmap(":/images/Monster01.png")); setScale(0.1);}
+    Monster(const Monster& m, QGraphicsItem * parent =0);
+    Monster& operator =(const Monster & m);
 
     void DefeatedBy(Hero& h);
     int GiveGold();

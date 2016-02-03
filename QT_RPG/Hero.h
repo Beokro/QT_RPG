@@ -10,10 +10,12 @@
 #include <time.h>
 #include <iostream>
 #include <cstdlib>
+#include <list>
 using std::endl;
 using std::cin;
 using std::cout;
 using std::sort;
+using std::list;
 
 static int LevelToUpgrade[16] = {0,15,25,34, 44, 59, 79, 105, 140, 187, 250, 332, 443, 591, 789, 1051 };
 
@@ -26,10 +28,13 @@ private:
     int experience;
     int maxEXP;
     int moveDistance = 50;
+    list<int>steps;
     Bag bag;
 public:
     Hero(QGraphicsItem * parent =0);
     void keyPressEvent(QKeyEvent * event);
+
+    Hero(const Hero& h,QGraphicsItem * parent =0);
 
     Hero(string name, int level, int attack, int defense, int stamina, int intelligence,
             int stun, int weak, int HP, int MP,  vector<int> skills, QGraphicsItem * parent =0) : QGraphicsPixmapItem(parent),
@@ -38,6 +43,7 @@ public:
                                                                                         setPixmap(QPixmap(":/images/Sabers.png"));
                                                                                         setScale(0.5);}
     Hero(string name);
+    Hero& operator =(const Hero & h);
     bool CheckLevelUp();
     bool CheckOwnership(Item& item);
     //void UseItem(string itemName);
@@ -71,6 +77,7 @@ public:
     //bool TakeOffEquip(Equipment equ);
 
     void ResetHP() {if(HP<totalHP/2) HP = totalHP/2;}
+    int getDire() {if(steps.size()>0){int temp = steps.front(); steps.pop_front();return temp;}return -1;}
 };
 
 #endif // HERO_H

@@ -19,6 +19,30 @@ Monster::Monster(QGraphicsItem * parent) : Life("Default", 0, 0, 0, 0, vector<in
 }
 
 
+Monster::Monster(const Monster& m, QGraphicsItem * parent): QGraphicsPixmapItem(parent) {
+    //currently not support skill
+    vector<int>skills;
+    Monster(m.name,m.attack,m.defense,m.stamina,m.intelligence,skills,m.dropItems,m.gold,m.EXP,parent);
+    QPixmap temp(":/images/Monster02.png");
+    temp.scaledToHeight(70,Qt::SmoothTransformation);
+    setPixmap(temp);
+}
+
+Monster& Monster::operator =(const Monster & m){
+    name = m.name;
+    attack = m.attack;
+    defense = m.defense;
+    stamina = m.stamina;
+    intelligence = m.intelligence;
+    dropItems = m.dropItems;
+    gold = m.gold;
+    this->EXP = m.EXP;
+    QPixmap temp(":/images/Monster02.png");
+    temp.scaledToHeight(70,Qt::SmoothTransformation);
+    setPixmap(temp);
+}
+
+
 void Monster::ShowInformation(){
   cout<<"\nName: "<<specialType<<GetName()<<endl;
   cout<<"HP: "<<GetHP()<<endl;

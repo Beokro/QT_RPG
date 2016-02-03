@@ -5,6 +5,9 @@
 #include <QtWidgets>
 #include "Hero.h"
 #include "Monster.h"
+#include "Dungeon.h"
+#include "World.h"
+#include "NPC.h"
 #include <vector>
 using std::vector;
 using std::pair;

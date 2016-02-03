@@ -559,7 +559,7 @@ void Dungeon::Reset(){
     tmp = stages[l][i][j];
     if(isdigit(tmp)){
       mIndex = 10*i+j;
-      Monster tempMonster = monsters[l][(int)tmp-'0'];
+      Monster tempMonster(monsters[l][(int)tmp-'0']);
       if(rand()%1 == 0)
         tempMonster.SetSpecial();
       monstersByPosition[l].push_back(pair<int,Monster>(mIndex,tempMonster));

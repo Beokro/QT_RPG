@@ -21,7 +21,9 @@ SOURCES += main.cpp \
     Hero.cpp \
     Monster.cpp \
     Bag.cpp \
-    Dungeon.cpp
+    Dungeon.cpp \
+    NPC.cpp \
+    World.cpp
 
 HEADERS  += \
     Game.h \
@@ -31,7 +33,9 @@ HEADERS  += \
     Hero.h \
     Monster.h \
     Bag.h \
-    Dungeon.h
+    Dungeon.h \
+    NPC.h \
+    World.h
 
 FORMS    += mainwindow.ui
 
